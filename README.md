@@ -3,13 +3,17 @@
 This project is a simple introduction to using d3.js to create and display basic SVG graphics on a webpage. The goal was to practice drawing different graphical primitives and hosting the visualization using GitHub Pages.
 
 ## Live Demo
-https://codementum.github.io/a1-ghd3/index.html
+https://adityaapatel.github.io/a1-ghd3/index.html
 
 ## Description
 The visualization displays several basic SVG shapes created using d3.js, including rectangles, circles, lines, and a polygon (path). Each shape is placed at a different location on the screen and uses a different color. This project was built to get familiar with d3 syntax and how SVG elements work.
 
 ## Screenshots
-(Add 1–2 screenshots of your visualization here)
+Below are screenshots of the visualization.  
+Hovering over the circle changes its color.
+
+![Visualization screenshot 1](image.png)
+![Visualization screenshot 2](image-1.png)
 
 ## Technical Achievements
 - Used d3.js to create and position SVG primitives such as rectangles, circles, lines, and a polygon.
