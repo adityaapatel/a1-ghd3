@@ -1,13 +1,127 @@
 <!DOCTYPE html>
-<div id="container"></div>
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-<script type="module">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aditya Patel A1</title>
+  <meta name="description" content="D3 visualization Helllo World assignment">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eeeeee;
+    }
 
-<script>
-  console.log(d3); // test if d3 is loaded
-  // Add an SVG
-  // Add Rectangles
-  // Add Circles
-  // Add Lines
-  // Add Polygons
-</script>
+    #container {
+      width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <h3>D3 Assignment 1 – random shapes</h3>
+    <h2>D3 visualization Hello World assignment</h2>
+    <p>Trying out basic SVG shapes with d3. First time using it.</p>
+    <div id="viz"></div>
+  </div>
+
+  <script>
+    console.log(d3); // just checking if d3 is loading
+
+    // svg setup (probly could be cleaner but this works)
+    const svgWidth = 700;
+    const svgHeight = 400;
+
+    const svg = d3.select("#viz")
+      .append("svg")
+      .attr("width", svgWidth)
+      .attr("height", svgHeight);
+
+    // -----------------
+    // rectangles
+    // -----------------
+
+    svg.append("rect")
+      .attr("x", 60)
+      .attr("y", 80)
+      .attr("width", 120)
+      .attr("height", 70)
+      .attr("fill", "steelblue");
+
+    svg.append("rect")
+      .attr("x", 240)
+      .attr("y", 260)
+      .attr("width", 150)
+      .attr("height", 60)
+      .attr("fill", "seagreen");
+
+    // -----------------
+    // circles
+    // -----------------
+
+    const c1 = svg.append("circle")
+      .attr("cx", 460)
+      .attr("cy", 120)
+      .attr("r", 35)
+      .attr("fill", "tomato");
+
+    // hover thing (just experimenting)
+    c1.on("mouseover", function () {
+        d3.select(this).attr("fill", "gold");
+      })
+      .on("mouseout", function () {
+        d3.select(this).attr("fill", "tomato");
+      });
+
+    svg.append("circle")
+      .attr("cx", 580)
+      .attr("cy", 290)
+      .attr("r", 25)
+      .attr("fill", "purple");
+
+    // -----------------
+    // lines
+    // -----------------
+
+    // horizontal line
+    svg.append("line")
+      .attr("x1", 50)
+      .attr("y1", 200)
+      .attr("x2", 650)
+      .attr("y2", 200)
+      .attr("stroke", "black")
+      .attr("stroke-width", 3);
+
+    // vertical line (maybe looks like a road?)
+    svg.append("line")
+      .attr("x1", 350)
+      .attr("y1", 50)
+      .attr("x2", 350)
+      .attr("y2", 360)
+      .attr("stroke", "gray")
+      .attr("stroke-width", 2);
+
+    // -----------------
+    // polygon / path
+    // -----------------
+
+    // made this by guessing coords till it looked ok
+    svg.append("path")
+      .attr("d", "M 120 260 L 180 220 L 240 260 L 200 320 L 140 320 Z")
+      .attr("fill", "orange")
+      .attr("stroke", "black")
+      .attr("stroke-width", 1);
+
+    // little label so its not just empty shapes
+    svg.append("text")
+      .attr("x", 20)
+      .attr("y", 25)
+      .attr("font-size", 14)
+      .text("rects, circles, lines, and a polygon");
+  </script>
+</body>
+</html>
